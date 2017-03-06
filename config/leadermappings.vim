@@ -15,3 +15,6 @@ noremap <leader>j <c-]>
 noremap <leader>b <c-T>
 noremap <leader>n :tnext<cr>
 noremap <leader>n :tprevious<cr>
+
+" Substitute all occurances of word under cursor
+noremap <leader>s :%s/\<<C-r><C-w>\>/
