@@ -21,7 +21,7 @@ endfunction
 
 " Let Vundle manage the bundle
 filetype off " required
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc("~/.vim/bundle/")
 
 " Plugins are in their own file, go figure
