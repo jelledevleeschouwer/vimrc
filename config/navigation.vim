@@ -1,14 +1,16 @@
 " Navigation configurations
 
-noremap m l
-noremap l k
-noremap k j
-noremap j h
+noremap H ^
+noremap L lg_
+noremap cL c$
+noremap cH c0
 
-map <c-l> <c-w>l
-map <c-u> <c-w>k
-map <c-j> <c-w>h
-map <c-k> <c-w>j
+inoremap <A-h> <C-o>h
+inoremap <A-j> <C-o>j
+inoremap <A-k> <C-o>k
+inoremap <A-l> <C-o>l
+
+noremap <S-Enter> o<Esc>
 
 " Wrap around at beginning or ending of line
 set whichwrap+=<,>,h,l,[,]
