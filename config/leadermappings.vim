@@ -10,11 +10,5 @@ noremap <leader>r :set invrelativenumber<cr>
 " Run ctags when pressing <leader>ct
 noremap <leader>ct :!ctags -R<cr>
 
-" Jump to tag under cursor
-noremap <leader>j <c-]>
-noremap <leader>b <c-T>
-noremap <leader>n :tnext<cr>
-noremap <leader>n :tprevious<cr>
-
 " Substitute all occurances of word under cursor
 noremap <leader>s :%s/\<<C-r><C-w>\>/
