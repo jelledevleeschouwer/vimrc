@@ -11,3 +11,6 @@ if bufwinnr(1)
     map + <C-W>>
     map - <C-W><
 endif
+
+set splitright
+set splitbelow

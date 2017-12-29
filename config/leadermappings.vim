@@ -8,7 +8,10 @@ noremap <Leader>vr :source $HOME/.vimrc<CR>
 noremap <leader>r :set invrelativenumber<cr>
 
 " Run ctags when pressing <leader>ct
-noremap <leader>ct :!ctags -R<cr>
+noremap <leader>ct :!ctags -R --extra=+f<cr>
 
 " Substitute all occurances of word under cursor
 noremap <leader>s :%s/\<<C-r><C-w>\>/
+
+" Re-indent
+noremap <F7> gg=G

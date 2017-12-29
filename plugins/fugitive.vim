@@ -1,0 +1,2 @@
+Plugin 'fugitive.vim'
+
