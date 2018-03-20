@@ -33,3 +33,4 @@ syntax on
 
 " Parse all vim configurations
 call s:SourceConfigFilesIn('config')
+

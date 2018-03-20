@@ -2,7 +2,7 @@
 
 set showtabline=2               " Display tabbar on top
 set laststatus=2                " Display status bar
-set textwidth=80               " Restrict lines to N columns
+set textwidth=81                " Restrict lines to N columns
 set colorcolumn=+1              " Show vertical bar @ Nth columns
 set number                      " Show line numbers by default
 
