@@ -25,15 +25,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" set rtp+=~/.vim/Vundle.vim
-" call vundle#rc("~/.vim/bundle/")
-" Plugin 'VundleVim/Vundle.Vim'
-call plug#begin('~/.vim/plugged')
-
 " Plugins are in their own file, go figure
-call s:SourceConfigFilesIn('plugins')
+filetype off
+syntax on
 
+call plug#begin('~/.vim/plugged')
+call s:SourceConfigFilesIn('plugins')
 call plug#end()
+
+filetype plugin indent on
 
 " Parse all vim configurations
 call s:SourceConfigFilesIn('config')

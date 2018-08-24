@@ -1,39 +1,40 @@
-let g:completor_racer_binary = '/home/jelle/.cargo/bin/racer'
-let g:completor_clang_binary = '/usr/bin/clang'
-let g:completor_python_binary = '/usr/bin/python3.5'
-let g:clang_library_path = '/usr/lib/llvm-4.0/lib/'
+set completeopt=longest,menuone
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>     <Plug>(neosnippet_expand_target)
+let g:jedi#completions_command = "<C-N>"
 
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <expr><TAB>
-\ neosnippet#expandable_or_jumpable() ?
-\    "\<Plug>(neosnippet_expand_or_jump)" :
-\ 	  pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+let g:clang_library_path='/usr/lib/llvm-4.0/lib'
+let g:clang_user_options = '-I/usr/include'
+let g:clang_user_options .= ' -I/usr/local/include'
+let g:clang_user_options .= ' -I/usr/lib/gcc/arm-none-eabi/7.2.1/include'
+let g:clang_user_options .= ' -I/usr/lib/gcc/x86_64-linux-gnu/6.3.0/include'
+let g:clang_user_options .= ' -I/usr/lib/gcc/x86_64-linux-gnu/6/include'"
+let g:clang_auto_select = 1
+let g:clang_complete_auto = 1
+let g:clang_complete_copen = 1
+let g:clang_complete_macros = 1
+let g:clang_complete_patterns = 1
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'ultisnips'
+let g:clang_use_library = 1
 
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-set conceallevel=2
-set concealcursor=vin
-let g:clang_snippets=1
-autocmd BufRead,BufNewFile   *.c let g:clang_snippets_engine='clang_complete'
-autocmd BufRead,BufNewFile   *.cpp let g:clang_snippets_engine='clang_complete'
+inoremap <C-j>  <C-n>
+inoremap <C-k>  <C-p>
 
 nnoremap <leader>dc :Dox<CR>
+
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-p>"
+let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+let g:SuperTabContextDiscoverDiscovery = ["&omnifunc:<c-x><c-o>"]
+autocmd FileType *
+      \if &omnifunc != '' |
+      \call SuperTabChain(&omnifunc, "<c-p>") |
+      \call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
+      \endif
 
 let g:syntastic_c_checkers=['clang_check', 'cppcheck', 'gcc', 'make', 'splint']
 let g:syntastic_c_config_file='.clang_complete'
