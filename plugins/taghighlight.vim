@@ -1,1 +1,1 @@
-Plugin 'vim-scripts/TagHighlight'
+Plug 'vim-scripts/TagHighlight'

@@ -1,3 +1,1 @@
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-
-nnoremap <leader>dc :Dox<CR>
+Plug 'vim-scripts/DoxygenToolkit.vim'

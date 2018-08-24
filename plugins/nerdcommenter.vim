@@ -1,4 +1,3 @@
 " Plugin for intensely orgasmic commenting
-
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1

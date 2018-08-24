@@ -1,2 +1,2 @@
-Plugin 'octol/vim-cpp-enhanced-highlight',{'for': 'cpp'}
-"Plugin 'davidhalter/jedi-vim'
+Plug 'octol/vim-cpp-enhanced-highlight',{'for': 'cpp'}
+Plug 'davidhalter/jedi-vim'

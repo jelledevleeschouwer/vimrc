@@ -1,9 +1,6 @@
 " Settings regarding the Vim colorscheme
 
-Plugin 'chriskempson/base16-vim'
-if (has("termguicolors"))
- set termguicolors
-endif
+set termguicolors
 colorscheme base16-material-darker
-set t_ut=
 let base16colorspace=256
+set background=dark

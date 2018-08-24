@@ -19,18 +19,21 @@ function! s:SourceConfigFilesIn(directory)
 	endfor
 endfunction
 
-" Let Vundle manage the bundle
-filetype off " required
-set rtp+=~/.vim/Vundle.vim
-call vundle#rc("~/.vim/bundle/")
-Plugin 'VundleVim/Vundle.Vim'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" set rtp+=~/.vim/Vundle.vim
+" call vundle#rc("~/.vim/bundle/")
+" Plugin 'VundleVim/Vundle.Vim'
+call plug#begin('~/.vim/plugged')
 
 " Plugins are in their own file, go figure
 call s:SourceConfigFilesIn('plugins')
 
-filetype plugin indent on
-syntax on
+call plug#end()
 
 " Parse all vim configurations
 call s:SourceConfigFilesIn('config')
-

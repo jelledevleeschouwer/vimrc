@@ -1,5 +1,3 @@
 " File browser plugin for Vim
-
-Plugin 'scrooloose/nerdtree'
-
+Plug 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>

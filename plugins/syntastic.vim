@@ -1,3 +1,2 @@
 " Syntax checking for Vim
-
-Plugin 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
