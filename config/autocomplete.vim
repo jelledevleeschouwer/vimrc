@@ -6,7 +6,7 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 let g:jedi#completions_command = "<C-N>"
 
-let g:clang_library_path='/usr/lib/llvm-4.0/lib'
+let g:clang_library_path='/usr/lib/llvm-6.0/lib'
 let g:clang_user_options = '-I/usr/include'
 let g:clang_user_options .= ' -I/usr/local/include'
 let g:clang_user_options .= ' -I/usr/lib/gcc/arm-none-eabi/7.2.1/include'

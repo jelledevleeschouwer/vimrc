@@ -8,6 +8,12 @@ install: ~/.vimrc ~/.tmux.conf
 	echo "Has curl... yes"; \
 	fi
 
+install_clang_complete:
+	@cd ~/.vim/plugged/clang_complete/ && make install
+
+uninstall_clang_complete:
+	@cd ~/.vim/plugged/clang_complete/ && make uninstall
+
 clean:
 	rm -f ~/.vimrc ~/.tmux.conf
 

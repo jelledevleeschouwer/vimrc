@@ -3,3 +3,6 @@ bundle
 plugged
 doc
 autoload
+.VimballRecord*
+plugin
+bin
