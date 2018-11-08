@@ -17,9 +17,7 @@ set splitbelow
 
 let g:airline_theme='tomorrow'
 
-set guifont=Hack\ Regular:h14
-let g:Powerline_symbols = 'fancy'
-let g:airline_powerline_fonts = 1
+set guifont=Monospace:h11
 set encoding=utf-8
 set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
