@@ -2,8 +2,8 @@
 
 ### Installation
 1. Clone this repository into `~/.vim`.
-2. Install Vundle with following command:
-`
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-`
-3. Run a `:PluginInstall`.
+2. Run `make -C ~/.vim`
+3. Launch vim to automagically install plugins.
+4. Run `make -C ~/.vim install_clang_complete` to properly install
+   clang_complete.
+5. Done.
