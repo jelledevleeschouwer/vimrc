@@ -6,3 +6,4 @@ autoload
 .VimballRecord*
 plugin
 bin
+vim
