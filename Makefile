@@ -1,6 +1,6 @@
 all: install
 
-install: ~/.vimrc ~/.tmux.conf vim
+install: ~/.vimrc ~/.tmux.conf /usr/local/bin/vim
 	@if ! hash curl 2>/dev/null; then \
 	echo "'curl' was not found in PATH, installing..."; \
 	sudo apt-get install curl; \
@@ -9,9 +9,11 @@ install: ~/.vimrc ~/.tmux.conf vim
 	fi
 
 vim: /usr/local/bin/vim
+/usr/local/bin/vim: ~/.vim/vim/src/auto/config.h
+	make -C ~/.vim/vim
+	sudo make -C ~/.vim/vim install
 
-/usr/local/bin/vim:
-	@git clone git@github.com:vim/vim.git ~/.vim/vim/
+~/.vim/vim/src/auto/config.h: ~/.vim/vim
 	cd ~/.vim/vim && ./configure \
 		--enable-gui=yes \
 		--enable-python3interp=yes \
@@ -19,8 +21,13 @@ vim: /usr/local/bin/vim
 		--enable-luainterp=yes \
 		--enable-tclinterp=yes \
 		--with-x
-	make -C ~/.vim/vim
-	sudo make -C ~/.vim/vim install
+
+~/.vim/vim:
+	@git clone git@github.com:vim/vim.git $@
+
+uninstall_vim: ~/.vim/vim/src/auto/config.h
+	sudo make -C ~/.vim/vim uninstall distclean clean
+	cd ~/.vim/vim/ && git clean -xdf
 
 install_clang_complete:
 	@cd ~/.vim/plugged/clang_complete/ && make install
@@ -28,13 +35,10 @@ install_clang_complete:
 uninstall_clang_complete:
 	@cd ~/.vim/plugged/clang_complete/ && make uninstall
 
-uninstall_vim:
-	sudo make -C ~/.vim/vim uninstall clean
-
 clean:
 	rm -f ~/.vimrc ~/.tmux.conf
 
 ~/%: %
 	@ln -s $(realpath $<) $@
 
-.PHONY: clean
+.PHONY: clean vim
