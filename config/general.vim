@@ -30,3 +30,4 @@ set cinkeys-=0#                 " Dont't force # indentation
 set cino+=(0                    " Break line to first bracket
 set backspace=indent,eol,start  " Smart backspace
 set linebreak                   " Don't cut words on wrap
+set wrap!                       " Actually, do not wrap at all
