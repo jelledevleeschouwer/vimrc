@@ -12,13 +12,22 @@ inoremap <A-l> <C-o>l
 
 noremap <S-Enter> o<Esc>
 
-noremap <leader>l <C-w><C-l>
-noremap <leader>h <C-w><C-h>
-noremap <leader>j <C-w><C-j>
-noremap <leader>k <C-w><C-k>
+nnoremap <A-l> <C-w><C-l>
+nnoremap <A-h> <C-w><C-h>
+nnoremap <A-j> <C-w><C-j>
+nnoremap <A-k> <C-w><C-k>
 
 " Wrap around at beginning or ending of line
 set whichwrap+=<,>,h,l,[,]
 
 noremap <silent> <ScrollWheelUp> :call smooth_scroll#up(&scroll/3, 0, 2)<CR>
 noremap <silent> <ScrollWheelDown> :call smooth_scroll#down(&scroll/3, 0, 2)<CR>
+
+" Navigating through tabs
+nnoremap <F1> gT
+nnoremap <F2> gt
+
+" Jumping lands on middle of screen
+nnoremap n nzz
+nnoremap { {zz
+nnoremap } }zz
