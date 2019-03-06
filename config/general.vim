@@ -14,7 +14,7 @@ set scrolloff=7                 " Lines below/above cursor when scrolling
 set showmatch                   " Highlight matching braces
 set matchtime=2                 " Show for 0.2 seconds
 set title                       " Show window title
-set hidden                      " Allow hidden buffers
+" set hidden                      " Allow hidden buffers
 
 " =============
 "  TABS/SPACES
