@@ -14,4 +14,4 @@ endfunction
 
 " Remove trailing whitespaces on save
 let noStripWhiteSpaceTypes = ['markdown']
-autocmd BufWritePre * if index(noStripWhiteSpaceTypes, &ft) < 0 | call StripTrailingWhitespace() | endif
+" autocmd BufWritePre * if index(noStripWhiteSpaceTypes, &ft) < 0 | call StripTrailingWhitespace() | endif
