@@ -16,6 +16,10 @@ set splitright
 set splitbelow
 
 let g:airline_theme='tomorrow'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#syntastic#enabled = 0
 
 set guifont=Monospace:h11
 set encoding=utf-8
