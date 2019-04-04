@@ -10,3 +10,5 @@ nnoremap ,s <Esc>:exe "tag ". expand("%:t:r").".c"<CR>
 nnoremap ,S <Esc>:exe "vertical ptag ". expand("%:t:r").".c"<CR>
 " nnoremap ,h <Esc>:exe "tag ". expand("%:t:r").".h"<CR>
 " nnoremap ,H <Esc>:exe "vertical ptag ". expand("%:t:r").".h"<CR>
+"
+set switchbuf=useopen,usetab
