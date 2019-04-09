@@ -20,9 +20,6 @@ nnoremap <A-k> <C-w><C-k>
 " Wrap around at beginning or ending of line
 set whichwrap+=<,>,h,l,[,]
 
-noremap <silent> <ScrollWheelUp> :call smooth_scroll#up(&scroll/3, 0, 2)<CR>
-noremap <silent> <ScrollWheelDown> :call smooth_scroll#down(&scroll/3, 0, 2)<CR>
-
 " Navigating through tabs
 nnoremap <F1> gT
 nnoremap <F2> gt
