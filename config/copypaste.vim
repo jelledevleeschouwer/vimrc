@@ -1,3 +1,3 @@
 " Copy paste configurations
 
-set clipboard=unnamed
+set clipboard=unnamedplus
