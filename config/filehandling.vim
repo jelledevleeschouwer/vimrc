@@ -1,35 +1,26 @@
 " Configuration for how files are handled on opening and closing
 
-" highlight trailingWhiteSpace ctermbg=red guibg=red  
+fun! <SID>SetupTrailingWhitespaces()
+    let curline = line('.')
+    let b:insert_top = curline
+    let b:insert_bottom = curline
+endfun
 
-" function! StripTrailingWhitespace()
-    " " Preparation: save last search, and cursor position.
-    " let _s=@/
-    " let l = line(".")
-    " let c = col(".")
-    " " do the business:
-    " %s/\s\+$//e
-    " " clean up: restore previous search history, and cursor position
-    " let @/=_s   
-    " call cursor(l, c)
-" endfunction
+fun! <SID>UpdateTrailingWhitespace()
+    let curline = line('.')
+    if b:insert_top > curline
+        let b:insert_top = curline
+    elseif b:insert_bottom < curline
+        let b:insert_bottom = curline
+    endif
+endfun
 
-" function! HighlightTrailingWhitespace()
-    " " " Preparation: save last search, and cursor position.
-    " " let _s=@/
-    " " let l = line(".")
-    " " let c = col(".")
-    " " " do the business:
-    " " %s/\s\+$//e
-    " " " clean up: restore previous search history, and cursor position
-    " " let @/=_s
-    " " call cursor(l, c)
-    " match trailingWhiteSpace /\s\+$/
-" endfunction
+fun! <SID>StripTrailingWhitespaces()
+    let original_cursor = getpos('.')
+    exe b:insert_top ',' b:insert_bottom 's/\s\+$//e'
+    call setpos('.', original_cursor)
+endfun
 
-
-" " Remove trailing whitespaces on save
-" let noStripWhiteSpaceTypes = ['markdown']
-" " autocmd BufWritePre * if index(noStripWhiteSpaceTypes, &ft) < 0 | call StripTrailingWhitespace() | endif    
-
-" autocmd BufWritePre * call HighlightTrailingWhitespace()
+autocmd InsertEnter * :call <SID>SetupTrailingWhitespaces()
+autocmd InsertLeave * :call <SID>StripTrailingWhitespaces()
+autocmd CursorMovedI * :call <SID>UpdateTrailingWhitespace()

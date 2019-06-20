@@ -28,3 +28,6 @@ nnoremap <F2> gt
 nnoremap n nzz
 nnoremap { {zz
 nnoremap } }zz
+
+" Move beyond end of line for formatting reasons
+set virtualedit=all
