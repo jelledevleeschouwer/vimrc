@@ -25,6 +25,7 @@ set softtabstop=4               " Backspace
 set shiftwidth=4                " Indentation is also 4 spaces
 set expandtab                   " Expand tab to spaces
 set smarttab                    " Tab to 2^n
+set smartindent
 set shiftround                  " Smart tabs
 set cinkeys-=0#                 " Dont't force # indentation
 set cino+=(0                    " Break line to first bracket

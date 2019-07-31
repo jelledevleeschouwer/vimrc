@@ -9,3 +9,7 @@ nnoremap <silent> <F5> :exec "colorscheme " .
 
 " Interesting light schemes:
 "  - base16-mexico-light
+"
+if filereadable(expand("~/.vimrc_background"))
+  source ~/.vimrc_background
+endif
