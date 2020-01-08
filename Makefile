@@ -35,6 +35,14 @@ install_clang_complete:
 uninstall_clang_complete:
 	@cd ~/.vim/plugged/clang_complete/ && make uninstall
 
+install_konsole:
+	@if [ -f ~/.local/share/konsole.bckp ] || [ -d ~/.local/share/konsole.bckp ]; then \
+		echo "konsole.bckp already exists!"; \
+	else \
+		mv ~/.local/share/konsole ~/.local/share/konsole.bckp; \
+		ln -s ~/.vim/konsole ~/.local/share/konsole; \
+	fi;
+
 clean:
 	rm -f ~/.vimrc ~/.tmux.conf
 
