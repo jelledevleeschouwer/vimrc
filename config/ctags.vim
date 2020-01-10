@@ -1,6 +1,6 @@
 " ctags configuration
 
-set tags=./tags,tags,~/.vim/tags;
+set tags=tags,~/.vim/tags;
 
 " Follow tag on double-click
 nnoremap <2-LeftMouse> :exe "tag ". expand("<cword>")<CR>
