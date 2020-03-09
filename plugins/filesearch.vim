@@ -1,1 +1,1 @@
-Plug 'troydm/asyncfinder.vim'
+" Plug 'troydm/asyncfinder.vim'
