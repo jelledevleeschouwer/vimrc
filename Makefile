@@ -10,31 +10,31 @@ install: ~/.vimrc ~/.tmux.conf /usr/local/bin/vim
 
 vim: /usr/local/bin/vim
 /usr/local/bin/vim: ~/.vim/vim/src/auto/config.h
-	make -C ~/.vim/vim
-	sudo make -C ~/.vim/vim install
+	$(MAKE) -C ~/.vim/vim
+	sudo $(MAKE) -C ~/.vim/vim install
 
 ~/.vim/vim/src/auto/config.h: ~/.vim/vim
 	cd ~/.vim/vim && ./configure \
 		--enable-gui=yes \
-		--enable-pythoninterp=yes \
 		--enable-python3interp=yes \
 		--enable-cscope=yes \
 		--enable-luainterp=yes \
 		--enable-tclinterp=yes \
+		--enable-perlinterp=yes \
 		--with-x
 
 ~/.vim/vim:
 	@git clone git@github.com:vim/vim.git $@
 
 uninstall_vim: ~/.vim/vim/src/auto/config.h
-	sudo make -C ~/.vim/vim uninstall distclean clean
+	sudo $(MAKE) -C ~/.vim/vim uninstall distclean clean
 	cd ~/.vim/vim/ && git clean -xdf
 
 install_clang_complete:
-	@cd ~/.vim/plugged/clang_complete/ && make install
+	@cd ~/.vim/plugged/clang_complete/ && $(MAKE) install
 
 uninstall_clang_complete:
-	@cd ~/.vim/plugged/clang_complete/ && make uninstall
+	@cd ~/.vim/plugged/clang_complete/ && $(MAKE) uninstall
 
 install_konsole:
 	@if [ -f ~/.local/share/konsole.bckp ] || [ -d ~/.local/share/konsole.bckp ]; then \

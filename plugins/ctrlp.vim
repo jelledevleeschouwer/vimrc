@@ -1,1 +1,1 @@
-Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'
+" Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'

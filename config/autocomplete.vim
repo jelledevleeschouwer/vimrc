@@ -21,6 +21,11 @@ let g:clang_snippets = 1
 let g:clang_snippets_engine = 'ultisnips'
 let g:clang_use_library = 1
 
+" Set the key used to jump back. Since clang_complete use jumplist, you can navigate through the
+" jumps with <CTRL-O> and <CTRL-I>. But I want <CTRL-T> to behave like Vim intented it to behave.
+" This is why I unbind the back key of clang complete
+let g:clang_jumpto_back_key = '<CTRL-O>'
+
 inoremap <C-j>  <C-n>
 inoremap <C-k>  <C-p>
 
@@ -35,6 +40,3 @@ autocmd FileType *
       \call SuperTabChain(&omnifunc, "<c-p>") |
       \call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
       \endif
-
-let g:syntastic_c_checkers=['clang_check', 'cppcheck', 'gcc', 'make', 'splint']
-let g:syntastic_c_config_file='.clang_complete'

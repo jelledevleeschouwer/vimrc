@@ -2,7 +2,10 @@
 
 ### Prerequisites
 * xorg-dev (For clipboard features)
+* xclip
 * python3-dev (For vim's python3 support)
+* libpython3-dev (For vim's python3 support)
+* libperl-dev (For vim's Perl support)
 ### Installation
 1. Clone this repository into `~/.vim`.
 2. Run `make -C ~/.vim`
