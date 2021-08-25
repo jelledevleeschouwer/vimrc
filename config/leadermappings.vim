@@ -8,7 +8,7 @@ noremap <Leader>vr :source $HOME/.vimrc<CR>
 noremap <leader>r :set invrelativenumber<cr>
 
 " Run ctags when pressing <leader>ct
-noremap <leader>ct :!~/.vim/scripts/tags.sh tags<cr><cr>
+noremap <leader>ct :!~/.vim/scripts/tags.sh tags COMPILED_SOURCE=1<cr><cr>
 
 " Substitute all occurances of word under cursor
 noremap <leader>s :%s/\<<C-r><C-w>\>/
@@ -20,3 +20,7 @@ noremap <F7> gg=G
 nmap <Leader>clf v<Leader>%k$<Leader>cs
 nmap <Leader>cif v<Leader>g%<Leader>cs<Leader>g%
 nmap <Leader>cef v<Leader>%<Leader>cs
+
+" FZF
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>F :GFiles<CR>

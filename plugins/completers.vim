@@ -1,6 +1,7 @@
-Plug 'Rip-Rip/clang_complete'
+" Plug 'Rip-Rip/clang_complete'
 Plug 'SirVer/ultisnips'
 Plug 'Honza/vim-snippets'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

@@ -6,6 +6,7 @@
 * python3-dev (For vim's python3 support)
 * libpython3-dev (For vim's python3 support)
 * libperl-dev (For vim's Perl support)
+* libncurses-dev
 ### Installation
 1. Clone this repository into `~/.vim`.
 2. Run `make -C ~/.vim`
