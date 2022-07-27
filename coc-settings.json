@@ -1,0 +1,11 @@
+{
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck"
+  },
+  "clangd.arguments": [
+    "--log=verbose",
+    "--query-driver=/home/jelle/opt/toolchain/gcc-arm-none-eabi-*/bin/arm-none-eabi-gcc",
+    "--background-index"
+  ],
+  "metals.javaHome": "/usr/lib/jvm/java-17-openjdk-amd64"
+}

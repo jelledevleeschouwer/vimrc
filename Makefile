@@ -16,6 +16,7 @@ vim: /usr/local/bin/vim
 ~/.vim/vim/src/auto/config.h: ~/.vim/vim
 	cd ~/.vim/vim && ./configure \
 		--enable-gui=yes \
+		--enable-pythoninterp=yes \
 		--enable-python3interp=yes \
 		--enable-cscope=yes \
 		--enable-luainterp=yes \
